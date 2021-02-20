@@ -1,4 +1,4 @@
-import { state, style, trigger } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 
 @Component({
@@ -14,7 +14,9 @@ import { Component } from '@angular/core';
       state('highligted', style({
         'background-color': 'blue',
         transform: 'translateX(100px)'
-      }))
+      })),
+      transition('normal => highligted', animate(300)),
+      transition('highligted => normal', animate(800))
     ])
   ]
 })
