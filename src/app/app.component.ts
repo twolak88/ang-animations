@@ -25,7 +25,7 @@ import { Component } from '@angular/core';
       })),
       state('highligted', style({
         'background-color': 'blue',
-        transform: 'translateX(100px) scale(0.5)'
+        transform: 'translateX(100px) scale(1)'
       })),
       state('shrunken', style({
         'background-color': 'green',
@@ -33,7 +33,15 @@ import { Component } from '@angular/core';
       })),
       transition('normal => highligted', animate(300)),
       transition('highligted => normal', animate(800)),
-      transition('shrunken <=> *', animate(500))
+      transition('shrunken <=> *', [
+        style({
+          'background-color': 'orange'
+        }),
+        animate(1000, style({
+          borderRadius: '50px'
+        })),
+        animate(500)
+      ])
     ])
   ]
 })
