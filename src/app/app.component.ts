@@ -117,9 +117,7 @@ export class AppComponent {
   }
 
   onShrink() {
-    console.log('aAAAAAAAAAAAAAa')
     this.wildState = 'shrunken';
-    console.log(this.wildState)
   }
 
   onAdd(item) {
@@ -128,5 +126,13 @@ export class AppComponent {
 
   onDelete(item) {
     this.list.splice(this.list.indexOf(item), 1);
+  }
+
+  animationStarted(event) {
+    console.log(event);
+  }
+
+  animationEnded(event) {
+    console.log(event);
   }
 }
